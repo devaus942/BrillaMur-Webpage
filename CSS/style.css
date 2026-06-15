@@ -1,0 +1,172 @@
+/* --- GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Aplicamos la fuente Open Sans que vimos en Figma */
+    font-family: 'Open Sans', sans-serif; 
+}
+
+body {
+    background-color: #F9FAFB;
+}
+
+/* --- SECCIÓN HERO --- */
+#hero-section {
+    width: 100%;
+    /* Aumentamos un poco el espacio vertical (de 100px a 140px) porque ahora todo es más grande */
+    padding: 140px 20px; 
+    background-color: #f8fbff; /* Fondo temporal hasta poner la imagen */
+    background-size: cover;
+    background-position: center;
+    /* Usamos Flexbox para centrar el bloque contenedor en la pantalla */
+    display: flex;
+    justify-content: center;
+}
+
+#hero-content {
+    width: 100%;
+    /* Aumentamos el contenedor para que los textos grandes quepan bien */
+    max-width: 1000px; 
+    text-align: left; /* ¡Alineación a la izquierda aplicada! */
+}
+
+/* --- TIPOGRAFÍA --- */
+#hero-title {
+    /* TAMAÑO AUMENTADO: de 44px a 64px */
+    font-size: 58px; 
+    font-weight: 700; /* Bold */
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+#title-part-dark {
+    color: #14344F; /* Azul oscuro exacto de Figma */
+}
+
+#title-part-light {
+    color: #2B6BA0; /* ¡Tu color ajustado manualmente intacto! */
+}
+
+/* --- TIPOGRAFÍA --- */
+#hero-subtitle {
+    font-size: 21px; /* Tamaño aumentado para equilibrar con el título grande */
+    font-weight: 400; 
+    color: #000000; 
+    margin-bottom: 30px;
+    line-height: 1.5; 
+    /* Ampliamos el ancho para que el <br> del HTML haga el corte exacto y no se corte antes de tiempo */
+    max-width: 800px; 
+}
+
+/* --- BOTÓN --- */
+#hero-button {
+    display: inline-block;
+    background-color: #3A8ECE; 
+    color: #FFFFFF; 
+    /* Reducimos un poco la fuente de 18px a 16px */
+    font-size: 16px; 
+    font-weight: 700; 
+    text-decoration: none;
+    /* Reducimos el relleno (arriba/abajo a 12px, lados a 28px) para hacerlo más estilizado */
+    padding: 12px 28px; 
+    border-radius: 8px; 
+    transition: background-color 0.3s ease;
+}
+
+#hero-button:hover {
+    background-color: #2B5BAD; 
+}
+
+/* --- SECCIÓN NUESTROS SERVICIOS --- */
+#services-section {
+    width: 100%;
+    /* Aumentamos el ancho de la sección (de 1200px a 1400px) para acercarnos a los bordes de la pantalla */
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 80px 20px;
+}
+
+/* --- CABECERA DE SERVICIOS --- */
+.services-header {
+    text-align: center; /* Esto es lo que lo centra */
+    margin-bottom: 60px; 
+}
+
+#services-title {
+    font-size: 48px; /* Título más grande */
+    font-weight: 700;
+    color: #14344F; 
+    margin-bottom: 16px;
+}
+
+#services-subtitle {
+    font-size: 24px; /* Subtítulo más grande */
+    font-weight: 400;
+    color: #0B0B0B; 
+}
+
+/* --- CONTENEDOR DE TARJETAS --- */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px; /* Mantenemos esa separación amplia que te gustó */
+    flex-wrap: wrap; 
+}
+
+/* --- TARJETA INDIVIDUAL --- */
+.service-card {
+    background-color: #FFFFFF; 
+    /* La fórmula matemática exacta para que entren 4: 100% / 4 = 25%, y le restamos 45px para compensar los huecos */
+    width: calc(25% - 45px); 
+    /* Subimos un poco el ancho mínimo para que las tarjetas se vean más robustas */
+    min-width: 270px; 
+    border-radius: 16px; 
+    border: 1px solid #AEAEAE; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden; 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.service-card:hover {
+    transform: scale(1.03) translateY(-5px); 
+    /* Aumentamos un poco más la sombra del hover para compensar la nueva sombra base */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+}
+
+/* --- ELEMENTOS DENTRO DE LA TARJETA --- */
+.card-image-placeholder {
+    width: 100%;
+    /* Aumentamos la altura de la imagen para alargar la tarjeta visualmente */
+    height: 200px; 
+    background-color: #000000; 
+}
+
+.card-icon-placeholder {
+    width: 36px;
+    height: 36px;
+    background-color: #e2f0fb; 
+    /* Redondeamos también un poco más el icono para mantener la coherencia */
+    border-radius: 6px; 
+    /* Damos un pelín más de aire alrededor del icono */
+    margin: 24px 20px 16px 20px; 
+}
+
+.card-title {
+    font-size: 16px; 
+    font-weight: 700;
+    color: #000000; 
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+.card-text {
+    font-size: 15px; 
+    font-weight: 400; 
+    color: #5B5B5B; 
+    /* Aumentamos el espacio vacío abajo (de 30 a 50px) para estirar más la tarjeta */
+    padding: 0 20px 50px 20px; 
+    line-height: 1.5;
+}
