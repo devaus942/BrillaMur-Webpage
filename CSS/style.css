@@ -170,3 +170,262 @@ body {
     padding: 0 20px 50px 20px; 
     line-height: 1.5;
 }
+
+/* --- SECCIÓN POR QUÉ ELEGIRNOS --- */
+#why-choose-us-section {
+    width: 100%;
+    max-width: 1400px; 
+    margin: 0 auto; /* Esto mantiene la sección centrada a los lados */
+    
+    margin-top: 100px; /* Puedes subir o bajar este número hasta que lo veas perfecto */
+    
+    padding: 80px 20px;
+}
+
+/* --- CABECERA --- */
+.why-header {
+    text-align: center;
+    margin-bottom: 70px; /* Separación amplia hasta los círculos */
+}
+
+.why-title {
+    font-size: 48px; /* Mismo tamaño que el título de servicios */
+    font-weight: 700;
+    color: #14344F; /* Tu color de título */
+    margin-bottom: 16px;
+}
+
+.why-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    color: #0B0B0B; /* Tu color de subtítulo */
+}
+
+/* --- CONTENEDOR DE CÍRCULOS --- */
+.features-container {
+    display: flex;
+    justify-content: space-between; /* Esparce los elementos para tocar los bordes */
+    gap: 40px;
+    margin-bottom: 80px; /* Separación entre los círculos y la caja inferior */
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+}
+
+.feature-item {
+    flex: 1; /* Hace que las 4 columnas midan exactamente lo mismo */
+    min-width: 220px;
+    text-align: center; /* Centra el texto dentro de su columna */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos (círculo, título, texto) */
+}
+
+.feature-circle {
+    width: 90px; 
+    height: 90px;
+    background-color: #3A8ECE; /* Tu color de círculo */
+    border-radius: 50%; /* Esto es lo que lo hace totalmente redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.icon-placeholder {
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF; /* Div blanco como me pediste */
+    border-radius: 4px; 
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000; /* Tu color de título de círculo */
+    margin-bottom: 12px;
+}
+
+.feature-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #5B5B5B; /* Tu color de texto de círculo */
+    line-height: 1.5;
+    max-width: 280px; /* Acota el texto para que haga el salto de línea visualmente agradable */
+}
+
+/* --- CAJA INFERIOR DE ESTADÍSTICAS --- */
+.stats-box {
+    width: 100%;
+    background-color: #E8F5FC; /* Tu color de fondo de caja */
+    border-radius: 16px; /* Bordes redondeados acordes con el resto del diseño */
+    display: flex;
+    justify-content: space-around; /* Reparte los 3 elementos equitativamente */
+    align-items: center;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 54px; /* Número grande y llamativo */
+    font-weight: 700;
+    color: #3A8ECE; /* Tu color de número */
+    margin-bottom: 8px;
+}
+
+.stat-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #5B5B5B; /* Tu color de texto inferior */
+}
+
+/* --- SECCIÓN CONTACTO --- */
+#contact-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 120px; /* Separación SEO-friendly con la sección anterior */
+    padding: 80px 10%; /* Mantenemos la proporción lateral de la web */
+}
+
+/* --- CABECERA --- */
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #14344F; /* Azul oscuro */
+    margin-bottom: 16px;
+}
+
+.contact-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    color: #0B0B0B; /* Negro/Gris muy oscuro */
+}
+
+/* --- CONTENEDOR DIVIDIDO (FLEXBOX) --- */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px; /* Separación entre la columna de info y el formulario */
+    flex-wrap: wrap; /* En móviles, el formulario caerá debajo de la info */
+}
+
+/* --- COLUMNA IZQUIERDA (Info) --- */
+.contact-info {
+    flex: 1; /* Ocupa el espacio disponible de su mitad */
+    min-width: 320px; /* Para que no se aplaste en móviles antes de saltar de línea */
+}
+
+.info-main-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono arriba por si el texto ocupa varias líneas */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-icon-box {
+    width: 54px;
+    height: 54px;
+    background-color: #D1EBF9; /* Azul super clarito */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Evita que la cajita se encoja */
+}
+
+.icon-dark-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: #2B6BA0; /* Color reservado para cuando pongas el icono real */
+    border-radius: 4px;
+}
+
+.info-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000; /* Texto negro */
+    margin-bottom: 6px;
+}
+
+.info-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #5B5B5B; /* Texto gris */
+    line-height: 1.5;
+}
+
+/* --- CAJA AZUL (Urgente) --- */
+.urgent-box {
+    background-color: #3A8ECE; /* Fondo azul */
+    padding: 35px 30px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.urgent-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF; /* Título blanco */
+    margin-bottom: 10px;
+}
+
+.urgent-text {
+    font-size: 15px;
+    color: #FFFFFF; /* Texto blanco */
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.urgent-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFFFFF; /* Botón blanco */
+    color: #000000; /* Texto del botón en negro */
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.urgent-button:hover {
+    background-color: #F0F0F0; /* Un gris muy sutil al pasar el ratón */
+}
+
+.icon-black-placeholder {
+    width: 18px;
+    height: 18px;
+    background-color: #000000; /* Cuadro negro reservado para el icono del teléfono */
+    border-radius: 3px;
+}
+
+/* --- COLUMNA DERECHA (Caja Blanca Reservada) --- */
+.contact-form-placeholder {
+    flex: 1; /* Ocupa la otra mitad */
+    min-width: 320px;
+    background-color: #FFFFFF; /* Fondo blanco para el futuro formulario */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombreado suave igual que las tarjetas */
+    min-height: 550px; /* Altura mínima reservada para que el espacio no colapse */
+}
