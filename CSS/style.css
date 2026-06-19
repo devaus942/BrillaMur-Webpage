@@ -145,17 +145,18 @@ body {
 }
 
 .card-icon-placeholder {
-    width: 36px;
-    height: 36px;
+    width: 48px; /* Aumentamos el ancho significativamente */
+    height: 48px; /* Aumentamos el alto para mantenerlo cuadrado */
     background-color: #e2f0fb; 
-    /* Redondeamos también un poco más el icono para mantener la coherencia */
-    border-radius: 6px; 
-    /* Damos un pelín más de aire alrededor del icono */
-    margin: 24px 20px 16px 20px; 
+    border-radius: 8px; /* Un poco más de radio para que acompañe al nuevo tamaño */
+    margin: 24px 20px 20px 20px; /* Ajustamos ligeramente el margen inferior para que el título respire */
+    display: flex; /* Añadimos esto para que cuando pongas el icono SVG se centre perfectamente */
+    justify-content: center;
+    align-items: center;
 }
 
 .card-title {
-    font-size: 16px; 
+    font-size: 20px; /* Subimos de 16px a 20px para darle más fuerza al título */
     font-weight: 700;
     color: #000000; 
     padding: 0 20px;
@@ -163,12 +164,11 @@ body {
 }
 
 .card-text {
-    font-size: 15px; 
+    font-size: 16px; /* Subimos a 16px para una lectura comodísima */
     font-weight: 400; 
-    color: #5B5B5B; 
-    /* Aumentamos el espacio vacío abajo (de 30 a 50px) para estirar más la tarjeta */
+    color: #4A4A4A; /* Mismo gris oscurecido que usamos en la sección inferior */
     padding: 0 20px 50px 20px; 
-    line-height: 1.5;
+    line-height: 1.6; /* Aumentamos el interlineado para que respire mejor */
 }
 
 /* --- SECCIÓN POR QUÉ ELEGIRNOS --- */
@@ -238,18 +238,18 @@ body {
 }
 
 .feature-title {
-    font-size: 18px;
+    font-size: 20px; /* Subimos de 18px a 20px para mantener el peso del título */
     font-weight: 700;
-    color: #000000; /* Tu color de título de círculo */
+    color: #000000; 
     margin-bottom: 12px;
 }
 
 .feature-text {
-    font-size: 15px;
+    font-size: 16px; /* Letra un punto más grande para mayor comodidad */
     font-weight: 400;
-    color: #5B5B5B; /* Tu color de texto de círculo */
-    line-height: 1.5;
-    max-width: 280px; /* Acota el texto para que haga el salto de línea visualmente agradable */
+    color: #4A4A4A; /* Un gris sutilmente más oscuro para mejorar el contraste */
+    line-height: 1.6; /* Damos un poquito más de aire entre las líneas */
+    max-width: 280px; 
 }
 
 /* --- CAJA INFERIOR DE ESTADÍSTICAS --- */
@@ -288,10 +288,11 @@ body {
 /* --- SECCIÓN CONTACTO --- */
 #contact-section {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1400px; /* Mantiene la misma línea que el resto de tu web */
     margin: 0 auto;
-    margin-top: 120px; /* Separación SEO-friendly con la sección anterior */
-    padding: 80px 10%; /* Mantenemos la proporción lateral de la web */
+    margin-top: 120px; 
+    /* ¡Aquí estaba el error! Cambiamos el 10% por 20px para que se expanda a los lados */
+    padding: 80px 20px; 
 }
 
 /* --- CABECERA --- */
@@ -317,14 +318,18 @@ body {
 .contact-container {
     display: flex;
     justify-content: space-between;
-    gap: 60px; /* Separación entre la columna de info y el formulario */
-    flex-wrap: wrap; /* En móviles, el formulario caerá debajo de la info */
+    /* Aumentamos el espacio vacío entre la información y el formulario */
+    gap: 100px; 
+    flex-wrap: wrap; 
 }
 
 /* --- COLUMNA IZQUIERDA (Info) --- */
 .contact-info {
-    flex: 1; /* Ocupa el espacio disponible de su mitad */
-    min-width: 320px; /* Para que no se aplaste en móviles antes de saltar de línea */
+    /* Le damos proporción 1 */
+    flex: 1; 
+    min-width: 320px; 
+    /* Acotamos un poco su ancho máximo para obligar al formulario a ser el más ancho de los dos */
+    max-width: 500px; 
 }
 
 .info-main-title {
@@ -420,12 +425,93 @@ body {
     border-radius: 3px;
 }
 
-/* --- COLUMNA DERECHA (Caja Blanca Reservada) --- */
+/* --- COLUMNA DERECHA (Caja Blanca del Formulario) --- */
 .contact-form-placeholder {
-    flex: 1; /* Ocupa la otra mitad */
+    flex: 1.4; 
     min-width: 320px;
-    background-color: #FFFFFF; /* Fondo blanco para el futuro formulario */
+    background-color: #FFFFFF; 
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombreado suave igual que las tarjetas */
-    min-height: 550px; /* Altura mínima reservada para que el espacio no colapse */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+    /* Quitamos el min-height temporal y le damos un padding real para que respire por dentro */
+    padding: 40px; 
+}
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.form-group {
+    margin-bottom: 24px; /* Separación entre cada campo */
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700; /* Texto en negrita como en tu Figma */
+    color: #000000; /* Negro */
+    margin-bottom: 8px; /* Espacio entre el texto y la caja de texto */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: #F3F3F5; /* Fondo de los campos */
+    border: 2px solid transparent; /* Borde transparente para evitar saltos al hacer clic */
+    border-radius: 8px; /* Bordes suaves */
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif; 
+    outline: none; /* Quitamos la línea fea que sale por defecto al hacer clic */
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al hacer clic dentro de un campo para escribir */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3A8ECE; /* Tu azul principal para indicar que está activo */
+}
+
+/* Color específico para los textos de ejemplo (Placeholders) */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #5B5B5B; 
+}
+
+/* Evitar que el textarea se estire hacia los lados, solo hacia abajo */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- BOTÓN DE ENVIAR --- */
+.submit-button {
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #3A8ECE; /* Azul del botón */
+    color: #FFFFFF; /* Texto blanco */
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2B5BAD; /* Un azul un poco más oscuro al pasar el ratón */
+}
+
+/* El cuadradito blanco para el futuro icono de enviar */
+.icon-white-placeholder {
+    width: 18px;
+    height: 18px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+/* --- CURSOR PARA LAS TARJETAS DE SERVICIO --- */
+.service-card {
+    cursor: pointer; /* Hace que aparezca la manita al pasar por encima */
 }
