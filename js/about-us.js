@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
       // Poner active al clicado
       item.classList.add('active');
     });
+
+    /* ────────────────────────────────────────
+   STAT CARDS
+   Click mantiene azul la última clickada.
+   Hover funciona solo con CSS.
+   ──────────────────────────────────────── */
+const statCards = document.querySelectorAll('.stat-card');
+
+statCards.forEach(card => {
+  card.addEventListener('click', () => {
+    // Quitar selected de todas
+    statCards.forEach(c => c.classList.remove('selected'));
+    // Poner selected en la clickada
+    card.classList.add('selected');
+  });
+});
   });
 
 });

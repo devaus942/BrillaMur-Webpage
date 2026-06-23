@@ -40,54 +40,138 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 56px;
-  height: 68px;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  height: 72px;
+  /* Fondo gris cálido con textura floral encima */
+  background-color: #D6D0C8;
+  background-image: url("../img/antiguo_patron_.png");
+  background-repeat: repeat;
+  background-size: 420px auto;
+  background-position: center;
   position: sticky;
   top: 0;
   z-index: 200;
+  border-bottom: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,.10);
 }
 
+/* Capa de color semitransparente sobre la textura para suavizarla */
+nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(214, 208, 200, 0.72);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Todo el contenido del nav por encima del ::before */
+nav > * { position: relative; z-index: 1; }
+
+/* ── LOGO BRILLAMUR estilizado ── */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--text-dark);
+  gap: 0;
   text-decoration: none;
+  line-height: 1;
+  /* Tipografía grande y bold como en la imagen */
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-style: italic;
 }
-.nav-logo svg { color: var(--blue); }
 
+/* "BRILLA" – gris oscuro/blanco con sombra */
+.nav-logo .logo-part-1 {
+  color: #f0ede8;
+  text-shadow:
+    1px 1px 0 #8a8278,
+    2px 2px 0 #7a7268,
+    -1px -1px 2px rgba(0,0,0,.25);
+  font-style: italic;
+}
+
+/* "MUR" – azul brillante */
+.nav-logo .logo-part-2 {
+  color: var(--blue);
+  text-shadow:
+    1px 1px 0 #1a5cbf,
+    2px 2px 0 #1050a8;
+  font-style: italic;
+}
+
+/* Ícono pequeño delante del logo */
+.nav-logo .logo-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
+  color: var(--blue);
+  flex-shrink: 0;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,.2));
+}
+
+/* ── LINKS con estilo pill ── */
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 10px;
   list-style: none;
 }
+
 .nav-links a {
   text-decoration: none;
-  color: var(--text-mid);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color .2s;
+  color: #3a3530;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.7);
+  backdrop-filter: blur(4px);
+  transition: background .2s, color .2s, border-color .2s;
+  white-space: nowrap;
 }
-.nav-links a:hover,
-.nav-links a.active { color: var(--blue); }
 
+.nav-links a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,.75);
+  color: var(--blue);
+  border-color: rgba(59,130,246,.3);
+}
+
+.nav-links a.active {
+  background: rgba(255,255,255,.75);
+  color: var(--blue);
+  border-color: rgba(59,130,246,.4);
+}
+
+/* ── Botón CTA azul ── */
 .btn-nav {
   background: var(--blue);
   color: var(--white);
   border: none;
-  padding: 10px 20px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
-  transition: background .2s;
+  transition: background .2s, transform .15s;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(37,99,235,.35);
 }
-.btn-nav:hover { background: var(--blue-dark); }
+.btn-nav:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
 
 /* ────────────────────────────────────────
    HERO
@@ -139,14 +223,14 @@ nav {
    STATS
    ──────────────────────────────────────── */
 .stats-section {
-  padding: 40px 56px;
+  padding: 60px 56px;
   background: var(--white);
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 30px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -161,20 +245,35 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, box-shadow .25s;
 }
 
-.stat-card.stat-blue {
+/* Hover Y seleccionado → azul */
+.stat-card:hover,
+.stat-card.selected {
   background: var(--blue);
   border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(59,130,246,.30);
 }
-.stat-card.stat-blue .stat-icon,
-.stat-card.stat-blue .stat-number { color: var(--white); }
-.stat-card.stat-blue .stat-label  { color: rgba(255,255,255,.75); }
+
+.stat-card:hover .stat-icon,
+.stat-card:hover .stat-number,
+.stat-card.selected .stat-icon,
+.stat-card.selected .stat-number {
+  color: var(--white);
+}
+
+.stat-card:hover .stat-label,
+.stat-card.selected .stat-label {
+  color: rgba(255,255,255,.75);
+}
 
 .stat-icon {
   color: var(--blue);
   display: flex;
   margin-bottom: 4px;
+  transition: color .25s;
 }
 
 .stat-number {
@@ -182,19 +281,21 @@ nav {
   font-weight: 800;
   color: var(--blue);
   line-height: 1;
+  transition: color .25s;
 }
 
 .stat-label {
   font-size: 0.78rem;
   color: var(--text-light);
   font-weight: 500;
+  transition: color .25s;
 }
 
 /* ────────────────────────────────────────
    SHARED SECTION
    ──────────────────────────────────────── */
 .section {
-  padding: 72px 56px;
+  padding: 50px 56px;
 }
 
 .section-title {
@@ -429,25 +530,6 @@ nav {
   transform: scale(1.06);
 }
 
-/* Blue overlay – appears on hover */
-.servicio-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(37, 99, 235, 0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  transition:
-    background .35s ease,
-    backdrop-filter .35s ease,
-    -webkit-backdrop-filter .35s ease;
-  z-index: 1;
-}
-
-.servicio-card:hover .servicio-overlay {
-  background: rgba(37, 99, 235, 0.42);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
 
 /* Text label always visible over dark gradient */
 .servicio-label {
