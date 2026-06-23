@@ -515,3 +515,40 @@ body {
 .service-card {
     cursor: pointer; /* Hace que aparezca la manita al pasar por encima */
 }
+
+/* =========================================
+   DISEÑO RESPONSIVE PRINCIPAL (MÓVILES) 
+   ========================================= */
+@media (max-width: 850px) {
+    /* Ajustes del Hero (Sección superior) */
+    #hero-section { padding: 100px 20px; }
+    #hero-title { font-size: 40px; }
+    #hero-subtitle { font-size: 18px; }
+
+    /* Títulos de sección más pequeños */
+    #services-title, .why-title, .contact-title { font-size: 36px; }
+
+    /* Tarjetas: Pasan a ocupar el 100% del ancho (1 por fila en vez de 4) */
+    .service-card {
+        width: 100%;
+    }
+
+    /* Por qué elegirnos: Los círculos pasan a ocupar el 100% de la fila */
+    .feature-item {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Estadísticas y Formulario: De fila a columna apilada */
+    .stats-box {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .contact-container {
+        gap: 50px;
+        flex-direction: column;
+    }
+    .contact-info, .contact-form-placeholder {
+        max-width: 100%;
+    }
+}

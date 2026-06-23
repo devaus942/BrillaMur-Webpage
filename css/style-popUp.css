@@ -38,6 +38,31 @@
     background-clip: padding-box; 
     
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* --- BARRA DE SCROLL PERSONALIZADA PARA EL POP-UP --- */
+.modal-content::-webkit-scrollbar {
+    width: 14px; /* Grosor total de la zona de scroll */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent; /* Hacemos el carril invisible */
+    /* ¡EL TRUCO! Le damos margen arriba y abajo para que la barra nunca llegue a tocar tus esquinas redondeadas */
+    margin: 40px 0; 
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #C2D5E6; /* Un azul grisáceo muy suave que pega con tu diseño */
+    border-radius: 20px; /* Hacemos la barra totalmente redonda */
+    /* Le ponemos un borde del mismo color que el fondo (#F9FAFB) para que parezca que la barra "flota" y es más fina */
+    border: 4px solid #F9FAFB; 
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #3A8ECE; /* Al pasar el ratón se pone de tu color azul principal */
 }
 
 /* --- BOTÓN DE CERRAR (X) --- */
@@ -152,4 +177,49 @@
     background-color: #5B5B5B; 
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); 
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE (MÓVILES Y TABLETS) 
+   ========================================= */
+@media (max-width: 850px) {
+    /* Achicamos el borde y el radio para que quepa en la pantalla */
+    .modal-content {
+        border-radius: 24px;
+        border-width: 12px; 
+    }
+
+    /* Achicamos y recolocamos la X */
+    .modal-close {
+        top: 15px;
+        right: 15px;
+    }
+    .modal-close svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Reducimos los espacios enormes de la cabecera y el cuerpo */
+    .modal-header {
+        padding: 40px 20px 30px 20px;
+    }
+    .modal-body {
+        padding: 20px 20px 40px 20px;
+    }
+
+    /* Textos más pequeños */
+    .modal-title { font-size: 32px; }
+    .modal-subtitle { font-size: 20px; }
+    .modal-intro { font-size: 16px; margin-bottom: 24px; }
+
+    /* ¡LA MAGIA! Pasa de 2 columnas horizontales a estar una encima de la otra */
+    .modal-columns, .modal-columns.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* La imagen pasa a estar abajo y un poco más pequeña */
+    .modal-image-placeholder {
+        height: 250px;
+    }
 }
