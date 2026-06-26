@@ -32,13 +32,12 @@
     position: relative;
     overflow: hidden;
     
-    /* ⬇️ EL MARCO TRANSLÚCIDO MÁS GRUESO ⬇️ */
+    /* EL MARCO TRANSLÚCIDO MÁS GRUESO */
     /* Subimos a 36px manteniendo la misma transparencia elegante */
     border: 30px solid rgba(255, 255, 255, 0.15); 
     background-clip: padding-box; 
     
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-
     max-height: 90vh;
     overflow-y: auto;
 }

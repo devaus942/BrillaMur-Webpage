@@ -1,0 +1,282 @@
+/* =========================================
+   ESTRUCTURA DE PÁGINA (Dos Columnas)
+   ========================================= */
+#contact-page-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.contact-page-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.form-card {
+    flex: 1.8; 
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-sidebar {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+/* --- ESTILOS DE LA SIDEBAR (Cajas derecha) --- */
+.sidebar-info-box {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #14344F;
+    margin-bottom: 30px;
+}
+
+.sidebar-blue-box {
+    background-color: #3A8ECE;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.blue-box-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.blue-box-list {
+    list-style-type: none; /* Quitamos el punto por defecto para hacerlo con CSS puro simulando tu diseño */
+}
+
+.blue-box-list li {
+    position: relative;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+    padding-left: 20px;
+}
+
+/* Punto blanco estilizado para la lista azul */
+.blue-box-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   SISTEMA BASE DE FORMULARIOS (Reutilizable)
+   ========================================= */
+.form-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2B6BA0; 
+    margin-bottom: 12px;
+}
+
+.form-subtitle {
+    font-size: 16px;
+    color: #4A4A4A;
+    margin-bottom: 40px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.form-group-half {
+    flex: 1;
+}
+
+.form-group-full {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.form-group-half label,
+.form-group-full label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* Estilos de Inputs y Selects idénticos al de tu index */
+.form-group-half input,
+.form-group-half select,
+.form-group-full input,
+.form-group-full select,
+.form-group-full textarea {
+    width: 100%;
+    background-color: #F3F3F5; 
+    border: 2px solid transparent; 
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+    /* Para el select, aseguramos que respete el estilo del sistema operativo o el que le demos */
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Añadimos un pequeño triángulo con CSS para el select ya que le quitamos el por defecto */
+.form-group-half select,
+.form-group-full select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B5B5B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.form-group-half input:focus,
+.form-group-half select:focus,
+.form-group-full input:focus,
+.form-group-full select:focus,
+.form-group-full textarea:focus {
+    border-color: #3A8ECE;
+}
+
+.form-group-half input::placeholder,
+.form-group-full input::placeholder,
+.form-group-full textarea::placeholder {
+    color: #5B5B5B;
+}
+
+.form-group-full textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.privacy-text {
+    text-align: center;
+    font-size: 13px;
+    color: #5B5B5B;
+    margin-top: 16px;
+}
+
+
+/* =========================================
+   RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 850px) {
+    .contact-page-container {
+        flex-direction: column;
+    }
+    .form-card {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .contact-sidebar {
+        width: 100%;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+    .form-group-half {
+        margin-bottom: 24px;
+    }
+}
+
+/* =========================================
+   ZONA DE SUBIDA DE ARCHIVOS (Drag & Drop)
+   ========================================= */
+.file-upload-zone {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px dashed #C2D5E6; /* Borde punteado azul clarito */
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón o arrastrar un archivo */
+.file-upload-zone:hover {
+    border-color: #3A8ECE;
+    background-color: #F8FBFF;
+}
+
+/* Ocultamos el input feo del navegador pero lo hacemos ocupar todo el div para que funcione el clic */
+.file-upload-zone input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Para que el clic pase a través de los textos y llegue al input oculto */
+}
+
+/* Div placeholder para el futuro icono de subir */
+.icon-upload-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #E2F0FB; /* Círculo azul clarito */
+    border-radius: 50%;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-text {
+    font-size: 15px;
+    color: #5B5B5B;
+    margin-bottom: 8px;
+}
+
+.upload-text .highlight {
+    color: #3A8ECE; /* Azul fuerte para la palabra "Haz clic..." */
+    font-weight: 700;
+}
+
+.upload-subtext {
+    font-size: 13px;
+    color: #888888;
+}

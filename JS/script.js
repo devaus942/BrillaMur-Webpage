@@ -51,5 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 .catch(error => console.log("Aún no se ha creado este pop-up:", popUpFile));
         });
     });
+    // ==========================================
+    // CARGA DINÁMICA DE FRAGMENTOS (SIDEBAR)
+    // ==========================================
+    
+    // 1. Buscamos si en la página actual existe el hueco para el sidebar
+    const sidebarContainer = document.getElementById('sidebar-container');
 
+    // 2. Si existe (es decir, estamos en contact-us o work-with-us), hacemos la llamada
+    if (sidebarContainer) {
+
+        fetch('fragments/sidebar.html')
+            .then(response => {
+                if (!response.ok) throw new Error('No se pudo cargar el sidebar');
+                return response.text();
+            })
+            .then(data => {
+                // Inyectamos todo el código HTML dentro de nuestro contenedor vacío
+                sidebarContainer.innerHTML = data;
+            })
+            .catch(error => console.error("Error cargando sidebar:", error));
+    }
 });

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brillamur - Trabaja con nosotros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-forms.css">
+</head>
+<body>
+    
+    <main class="main-window">
+        <section id="contact-page-section">
+            <div class="contact-page-container">
+                
+                <div class="form-card">
+                    <h2 class="form-title">Envía tu candidatura</h2>
+                    <p class="form-subtitle">Completa el formulario y adjunta tu currículum. Nos pondremos en contacto contigo</p>
+                    
+                    <form class="main-form" action="#" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="form-row">
+                            <div class="form-group-half">
+                                <label for="name">Nombre completo *</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group-half">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group-half">
+                                <label for="phone">Teléfono *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" required>
+                            </div>
+                            <div class="form-group-half">
+                                <label for="location">Ubicación *</label>
+                                <input type="text" id="location" name="location" placeholder="Tu ciudad" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group-full">
+                            <label for="specialty">Servicio en el que te especializas *</label>
+                            <select id="specialty" name="specialty" required>
+                                <option value="" disabled selected>Selecciona tu especialidad</option>
+                                <option value="cristales">Limpieza de Cristales</option>
+                                <option value="oficinas">Mantenimiento de Oficinas</option>
+                                <option value="fachadas">Limpieza de Fachadas en Altura</option>
+                                <option value="particulares">Limpieza para Particulares</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group-full">
+                            <label for="experience">Cuéntanos sobre tu experiencia (opcional)</label>
+                            <textarea id="experience" name="experience" placeholder="Háblanos de tu experiencia profesional, habilidades y por qué quieres formar parte de Brillamur..."></textarea>
+                        </div>
+
+                        <div class="form-group-full">
+                            <label>Envía tu currículum *</label>
+                            <div class="file-upload-zone" id="drop-zone">
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                <div class="upload-content">
+                                    <div class="icon-upload-placeholder"></div>
+                                    <p class="upload-text" id="file-name-display"><span class="highlight">Haz clic para seleccionar</span> o arrastra tus archivos aquí</p>
+                                    <p class="upload-subtext">PDF, DOC, DOCX (máx. 10MB)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <div class="icon-white-placeholder"></div>
+                            Enviar solicitud
+                        </button>
+                        
+                        <p class="privacy-text">Al enviar este formulario aceptas nuestra política de privacidad</p>
+
+                    </form>
+                </div>
+
+                <div class="contact-sidebar" id="sidebar-container">
+                    </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
